@@ -308,6 +308,7 @@ end
 function hdf5._getTorchType(typeID)
     local className = hdf5._datatypeName(typeID)
     local size = tonumber(hdf5.C.H5Tget_size(typeID))
+    print('typeid', typeID)
     if className == 'INTEGER' then
         if size == 1 then
             return 'torch.ByteTensor'
